@@ -13,7 +13,7 @@ message HelloResponse {
     string greet = 1;
 }
 
-// grpc unary
 service HelloService {
-    rpc SayHello(HelloRequest) returns (HelloResponse);
+    rpc SayHello(HelloRequest) returns (HelloResponse); // grpc unary
+    rpc SayManyHellos(HelloRequest) returns (stream HelloResponse); // grpc stream
 }
