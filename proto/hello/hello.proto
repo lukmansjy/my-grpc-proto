@@ -14,6 +14,7 @@ message HelloResponse {
 }
 
 service HelloService {
-    rpc SayHello(HelloRequest) returns (HelloResponse); // grpc unary
-    rpc SayManyHellos(HelloRequest) returns (stream HelloResponse); // grpc stream
+    rpc SayHello(HelloRequest) returns (HelloResponse) {} // grpc unary
+    rpc SayManyHellos(HelloRequest) returns (stream HelloResponse) {} // grpc server stream
+    rpc SayHelloToEveryone(stream HelloRequest) returns (HelloResponse) {} // grpc client stream
 }
