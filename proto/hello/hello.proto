@@ -17,4 +17,5 @@ service HelloService {
     rpc SayHello(HelloRequest) returns (HelloResponse) {} // grpc unary
     rpc SayManyHellos(HelloRequest) returns (stream HelloResponse) {} // grpc server stream
     rpc SayHelloToEveryone(stream HelloRequest) returns (HelloResponse) {} // grpc client stream
+    rpc SayHelloContinuous(stream HelloRequest) returns (stream HelloResponse) {} // grpc bi directional stream
 }
